@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class Java_2 {
+public class Java {
     public void String_Convert_Date() {
         Scanner sc = new Scanner(System.in);
         String date;
