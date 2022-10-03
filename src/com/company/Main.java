@@ -1,20 +1,42 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        JavaBuoi2 jv2= new JavaBuoi2();
-//        jv2.String_Convert_Date();
-//        jv2.Getdatetime();
-//        jv2.Count();
-//        jv2.Multiplication();
+        // write your code here
+        Scanner sc = new Scanner(System.in);
         JavaBuoi3 jv3 = new JavaBuoi3();
-//        jv3.Quadratic();
-//        jv3.Car();
-//        jv3.Sum();
-//        jv3.Calculator();
-//        jv3.Student();
-//
+        int n;
+        do {
+
+            System.out.println("-----------------Menu-----------------");
+            System.out.println("1. Giải phương trình bậc nhất");
+            System.out.println("2. Giải phương trình bậc 2");
+            System.out.println("3. Tính tiền điện");
+            System.out.println("4. Kết thúc");
+            System.out.println("Nhập lựa chọn: ");
+            n = sc.nextInt();
+            switch (n) {
+                case 1:
+                    jv3.giaiPTB1();
+                    break;
+                case 2:
+                    jv3.giaiPTB2();
+                    break;
+                case 3:
+                    jv3.tinhTienDien();
+                    break;
+                case 4:
+                    System.exit(0);
+                default:
+                    System.out.println("Bạn chọn sai vui lòng chọn lại: ");
+            }
+
+
+        } while (n != 0);
+
+
     }
 }
