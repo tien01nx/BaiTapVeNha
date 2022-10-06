@@ -21,6 +21,7 @@ public class JavaBuoi3 {
             System.out.println("Phương trình vô số nghiệm");
         else if (a == 0 && b != 0)
             System.out.println("Phương trình vô nghiệm");
+        else
         System.out.println("Nghiệm của phương trình là: " + (-b / a));
     }
 
@@ -40,8 +41,8 @@ public class JavaBuoi3 {
             detal = b * b - 4 * a * c;
 
             if (detal > 0) {
-                System.out.println("Phương trình có 2 nghiệm phân biệt: x1 = " + (-b - Math.sqrt(detal)) / 2 * a);
-                System.out.println("Phương trình có 2 nghiệm phân biệt: x2 = " + (-b + Math.sqrt(detal)) / 2 * a);
+                System.out.println("Phương trình có 2 nghiệm phân biệt: x1 = " + (-b - Math.sqrt(detal)) / (2*a));
+                System.out.println("Phương trình có 2 nghiệm phân biệt: x2 = " + (-b + Math.sqrt(detal)) / (2*a));
             } else if (detal == 0)
                 System.out.println("Phương trình có nghiệm duy nhất: x= " + -b / a);
             else

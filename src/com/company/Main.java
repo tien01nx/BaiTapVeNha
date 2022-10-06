@@ -19,19 +19,15 @@ public class Main {
             System.out.println("Nhập lựa chọn: ");
             n = sc.nextInt();
             switch (n) {
-                case 1:
-                    jv3.giaiPTB1();
-                    break;
-                case 2:
-                    jv3.giaiPTB2();
-                    break;
-                case 3:
-                    jv3.tinhTienDien();
-                    break;
-                case 4:
-                    System.exit(0);
-                default:
-                    System.out.println("Bạn chọn sai vui lòng chọn lại: ");
+                case 1 -> jv3.giaiPTB1();
+                case 2 -> jv3.giaiPTB2();
+                case 3 -> jv3.tinhTienDien();
+                case 4 -> System.exit(0);
+                case 5 -> {
+                    Film film = new Film();
+//                    film.getInfo();
+                }
+                default -> System.out.println("Bạn chọn sai vui lòng chọn lại: ");
             }
 
 
