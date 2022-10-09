@@ -1,39 +1,44 @@
 package com.company.quanlysach;
 
+import com.company.quanlylophoc.User;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Book {
+    //    mã sách, tên sách, tác giả, thể loại, nhà xuất bản, năm xuất bản, số trang
     Category category;
     String publishingCompany;
-    ArrayList<Book> list = new ArrayList<>();
-    //    mã sách, tên sách, tác giả, thể loại, nhà xuất bản, năm xuất bản
     private String id, name, author;
     private int year;
-
+    private int page_number;
+    ArrayList<Book> list = new ArrayList<>();
     public Book() {
 
     }
 
-    public Book(String id, String name, String author, Category category, String publishingCompany, int year) {
+    public Book(String id, String name, String author, Category category, String publishingCompany, int year,int page_number) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.category = category;
         this.year = year;
         this.publishingCompany = publishingCompany;
+        this.page_number = page_number;
     }
 
     //        truyen tham so vao list
     public void create() {
-        list.add(new Book("1", "giai tich 1", "nguyen van a", Category.CHINHTRI, "dan tr", 2016));
-        list.add(new Book("2", "toan ", "nguyen van b", Category.GIAOTRINH, "dan tr", 2017));
-        list.add(new Book("3", "phan tich thiet ke", "nguyen van c", Category.KHOAHOC, "dan tr", 2005));
-        list.add(new Book("4", "an ninh bao mat", "nguyen van d", Category.CHINHTRI, "dan tr", 2022));
+        list.add(new Book("1", "giai tich 1", "nguyen van a", Category.CHINHTRI, "dan tr", 2016,45));
+        list.add(new Book("2", "toan ", "nguyen van b", Category.GIAOTRINH, "dan tr", 2017,345));
+        list.add(new Book("3", "phan tich thiet ke", "nguyen van c", Category.KHOAHOC, "dan tr", 2005,213));
+        list.add(new Book("4", "an ninh bao mat", "nguyen van d", Category.CHINHTRI, "dan tr", 2022,80));
 
     }
-
+//    hien thong tin tung nguoi
     public void show() {
         System.out.println("\n-----------------------");
         System.out.println("id: " + id);
@@ -42,6 +47,7 @@ public class Book {
         System.out.println("category: " + getCategory());
         System.out.println("publishingCompany: " + publishingCompany);
         System.out.println("year: " + year);
+        System.out.println("page number: "+page_number);
     }
 
     //    hien danh sach sach
@@ -109,6 +115,50 @@ public class Book {
 
     }
 
+    // sap xep theo so trang
+    public void sortPageNumber(){
+        Collections.sort(list, new Comparator<Book>() {
+            @Override
+            public int compare(Book o1, Book o2) {
+                if (o1.getPage_number() > o2.getPage_number()) {
+                    return 1;
+                } else {
+                    if (o1.getPage_number() == o2.getPage_number()) {
+                        return 0;
+                    } else {
+                        return -1;
+                    }
+                }
+            }
+        });
+    }
+
+    // sap xep theo so trang tang dan
+    public void sortYear(){
+        Collections.sort(list, new Comparator<Book>() {
+            @Override
+            public int compare(Book o1, Book o2) {
+                if (o1.getYear() > o2.getYear()) {
+                    return 1;
+                } else {
+                    if (o1.getYear() == o2.getYear()) {
+                        return 0;
+                    } else {
+                        return -1;
+                    }
+                }
+            }
+        });
+    }
+
+
+    public int getPage_number() {
+        return page_number;
+    }
+
+    public void setPage_number(int page_number) {
+        this.page_number = page_number;
+    }
 
     public String getId() {
         return id;

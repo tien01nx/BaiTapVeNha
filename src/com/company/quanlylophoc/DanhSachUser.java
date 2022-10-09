@@ -39,7 +39,6 @@ public class DanhSachUser {
         for(User user :list)
             user.printInfo();
 
-
     }
 //    tim kiem theo keyword name email phone
     public void searchName(){
@@ -70,7 +69,7 @@ public class DanhSachUser {
         });
     }
 //    sap xep theo age tang dan
-    public void sortage(){
+    public void sortAge(){
         Collections.sort(list, new Comparator<User>() {
             @Override
             public int compare(User o1, User o2) {
@@ -86,4 +85,7 @@ public class DanhSachUser {
             }
         });
     }
+
+
+
 }

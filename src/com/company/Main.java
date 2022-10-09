@@ -1,14 +1,5 @@
 package com.company;
-
-import com.company.quanlylophoc.DanhSachUser;
-import com.company.quanlylophoc.Student;
-import com.company.quanlylophoc.Teacher;
-import com.company.quanlylophoc.User;
 import com.company.quanlysach.Book;
-
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Main {
@@ -18,7 +9,8 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
 
-        Book book = new Book();
+        Book  book = new Book();
+
 
 
         Scanner sc = new Scanner(System.in);
@@ -30,7 +22,9 @@ public class Main {
             System.out.println("2. tim kiem sach theo ten ");
             System.out.println("3. tim sach theo the loai");
             System.out.println("4. liet ke sach xuat ban trong nam");
-            System.out.println("5. ket thuc chuong trinh");
+            System.out.println("5. Sap xep theo so trang");
+            System.out.println("6. Sap xep theo nam xuat ban");
+            System.out.println("7. ket thuc");
             n = sc.nextInt();
             switch (n) {
                 case 1 -> {
@@ -42,9 +36,16 @@ public class Main {
                 case 2 -> book.searchName();
                 case 3 -> book.searchCategory();
                 case 4 -> book.showYear();
+                case 5 ->{
+                    book.sortPageNumber();
+                    book.showInfo();
+                }
+                case 6 ->{
+                    book.sortYear();
+                    book.showInfo();
+                }
 
-
-                case 5 -> System.exit(0);
+                case 7 -> System.exit(0);
                 default -> System.out.println("ban nhap sai vui long chon lai");
             }
         } while (n != 0);
