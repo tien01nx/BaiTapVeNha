@@ -63,8 +63,7 @@ public class DanhSachUser {
             @Override
             public int compare(User o1, User o2) {
                 return (o1.getName().compareTo(o2.getName()));
-                // Muốn đảo danh sách các bạn đối thành
-                //return (o2.hoTen.compareTo(o1.hoTen));
+
             }
         });
     }

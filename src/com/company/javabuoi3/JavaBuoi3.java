@@ -1,4 +1,4 @@
-package com.company;
+package com.company.javabuoi3;
 
 import java.sql.SQLOutput;
 import java.util.Scanner;
@@ -194,12 +194,12 @@ public class JavaBuoi3 {
         size = sc.nextInt();
         int[] array = new int[size];
         for (int i = 0; i < size; i++) {
-            System.out.println("Nhập phần tử thứ " + i + ": ");
+            System.out.println("Nhập phần tử thứ " + (i+1) + ": ");
             array[i] = sc.nextInt();
         }
-
+        System.out.println("Mang sau nhap la: ");
         for (int i = 0; i < size; i++) {
-            System.out.println("Phần tử thứ " + i + " : " + array[i]);
+            System.out.print(+ array[i] +"\t");
         }
 
     }
@@ -247,6 +247,8 @@ public class JavaBuoi3 {
                 array[i][j] = sc.nextInt();
             }
         }
+
+
         System.out.println("Ma trận :");
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -254,6 +256,7 @@ public class JavaBuoi3 {
             }
             System.out.println("\n");
         }
+
 
         for (int i = 0; i < m; i++)
             for (int j = 0; j < n; j++)

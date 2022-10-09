@@ -1,4 +1,4 @@
-package com.company;
+package com.company.javabuoi2;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
