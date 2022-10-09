@@ -50,6 +50,7 @@ public class DanhSachUser {
             if (user.getName().contains(keyword ) || user.getEmail().contains(keyword ) || user.getPhoneNumber().contains(keyword)) {
                     user.printInfo();
                 dem++;
+
             }
         }
         if (dem == 0) {
