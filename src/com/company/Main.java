@@ -4,6 +4,7 @@ import com.company.quanlylophoc.DanhSachUser;
 import com.company.quanlylophoc.Student;
 import com.company.quanlylophoc.Teacher;
 import com.company.quanlylophoc.User;
+import com.company.quanlysach.Book;
 
 
 import java.time.LocalDate;
@@ -16,42 +17,78 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        DanhSachUser user = new DanhSachUser();
+
+        Book book = new Book();
+
+
         Scanner sc = new Scanner(System.in);
         int n;
         do {
 
             System.out.println("\n-----------------Menu-----------------");
-            System.out.println("1. hien thong tin sinh vien, giao vien ");
-            System.out.println("2. tim kiem theo keyword ");
-            System.out.println("3. sap xep theo ten tang dan a-z");
-            System.out.println("4. sap xep tuoi giam dan");
+            System.out.println("1. hien danh sach sach ");
+            System.out.println("2. tim kiem sach theo ten ");
+            System.out.println("3. tim sach theo the loai");
+            System.out.println("4. liet ke sach xuat ban trong nam");
             System.out.println("5. ket thuc chuong trinh");
             n = sc.nextInt();
             switch (n) {
                 case 1 -> {
 
-                    user.creatList();
-                    user.show();
+                    book.create();
+                    book.showInfo();
                 }
 
-                case 2 -> user.searchName();
-                case 3 -> {
-                    user.sortName();
-                    System.out.println("danh sach sau khi sap xep la:");
-                    user.show();
-                }
-                case 4 -> {
-                    user.sortage();
-                    System.out.println("danh sach sau khi sap xep la:");
-                    user.show();
-                }
+                case 2 -> book.searchName();
+                case 3 -> book.searchCategory();
+                case 4 -> book.showYear();
+
+
                 case 5 -> System.exit(0);
                 default -> System.out.println("ban nhap sai vui long chon lai");
             }
         } while (n != 0);
     }
 }
+
+
+
+//        DanhSachUser user = new DanhSachUser();
+//        Scanner sc = new Scanner(System.in);
+//        int n;
+//        do {
+//
+//            System.out.println("\n-----------------Menu-----------------");
+//            System.out.println("1. hien thong tin sinh vien, giao vien ");
+//            System.out.println("2. tim kiem theo keyword ");
+//            System.out.println("3. sap xep theo ten tang dan a-z");
+//            System.out.println("4. sap xep tuoi giam dan");
+//            System.out.println("5. ket thuc chuong trinh");
+//            n = sc.nextInt();
+//            switch (n) {
+//                case 1 -> {
+//
+//                    user.creatList();
+//                    user.show();
+//                }
+//
+//                case 2 -> user.searchName();
+//                case 3 -> {
+//                    user.sortName();
+//                    System.out.println("danh sach sau khi sap xep la:");
+//                    user.show();
+//                }
+//                case 4 -> {
+//                    user.sortage();
+//                    System.out.println("danh sach sau khi sap xep la:");
+//                    user.show();
+//                }
+//                case 5 -> System.exit(0);
+//                default -> System.out.println("ban nhap sai vui long chon lai");
+//            }
+//        } while (n != 0);
+//    }
+//}
 
 
 //

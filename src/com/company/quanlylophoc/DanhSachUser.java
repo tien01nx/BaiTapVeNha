@@ -39,6 +39,7 @@ public class DanhSachUser {
         for(User user :list)
             user.printInfo();
 
+
     }
 //    tim kiem theo keyword name email phone
     public void searchName(){
