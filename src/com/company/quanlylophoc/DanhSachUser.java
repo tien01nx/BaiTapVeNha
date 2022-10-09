@@ -19,7 +19,7 @@ public class DanhSachUser {
     String strDate2= "20-08-2002";
     String strDate3= "20-08-2013";
     String strDate4= "20-08-2017";
-
+// tao danh sach
     public void creatList(){
         listTea.add(new Teacher("1","nguyen manh hung","hung@gmail.com","0989876781", LocalDate.parse(strDate,dtf),1,2018,"my sql"));
         listTea.add(new Teacher("2","nguyen van dong","dong111@gmail.com","098985471",LocalDate.parse(strDate2,dtf),2,2012,"slq"));
@@ -34,11 +34,13 @@ public class DanhSachUser {
         list.addAll(listTea);
 
     }
+//    hien danh sach sinh vien giang vien
     public void show(){
         for(User user :list)
             user.printInfo();
 
     }
+//    tim kiem theo keyword name email phone
     public void searchName(){
         String keyword  ="";
         System.out.println("nhap keyword  can tim kiem");
@@ -54,6 +56,7 @@ public class DanhSachUser {
             System.out.println("khong co trong he thong");
         }
     }
+//    sap xep theo name a-z
     public void sortName(){
 //        sap xep ten tang dan theo a-z
         Collections.sort(list, new Comparator<User>() {
@@ -65,6 +68,7 @@ public class DanhSachUser {
             }
         });
     }
+//    sap xep theo age tang dan
     public void sortage(){
         Collections.sort(list, new Comparator<User>() {
             @Override
