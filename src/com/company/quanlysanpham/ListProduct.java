@@ -9,6 +9,11 @@ public class ListProduct {
     ArrayList<Product> list = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
 
+    public void hoanDoi(double a, double b){
+        double temp = a;
+        a = b;
+        b = temp;
+    }
     public void create() {
         list.add(new Product("id01", "bim bim", "an khong ngon khong tinh tien", 2, 6000, "g"));
         list.add(new Product("id02", "nuoc ngot", "nuoc tang luc", 50, 10000, "ml"));
@@ -44,12 +49,10 @@ public class ListProduct {
         System.out.println("Nhap id san pham can tim kiem: ");
         String id = sc.nextLine();
         int dem = 0;
-        int vitri = 0;
-        Product product = list.get(0);
+
         for (Product p : list) {
             if (p.getId().equalsIgnoreCase(id)) {
                 System.out.println(p.toString());
-                product = p;
                 dem++;
             }
         }
@@ -60,7 +63,7 @@ public class ListProduct {
             int n = sc.nextInt();
             switch (n) {
                 case 1 -> {
-                    list.remove(vitri);
+                    list.removeIf(p -> p.getId().contains(id));
                     System.out.println("Xoa thanh cong");
                     System.out.println("danh sach sau khi cap nhat la");
                     show();
@@ -69,8 +72,8 @@ public class ListProduct {
                     System.out.println("nhap so luong muon cap nhat: ");
                     double sl = sc.nextDouble();
                     for (Product p : list) {
-                        if (p == product)
-                            p.setAmount(sl);
+                       if(p.getId().contains(id))
+                           p.setPrice(sl);
                     }
                     System.out.println("danh sach sau khi cap nhat la");
                     show();

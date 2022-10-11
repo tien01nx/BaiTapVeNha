@@ -1,4 +1,8 @@
 package com.company;
+import com.company.dahinh.ChuNhat;
+import com.company.dahinh.Vuong;
+import com.company.diem.SinhVienBiz;
+import com.company.diem.SinhVienIT;
 import com.company.quanlynhanvien.DanhSachEmpoyee;
 import com.company.quanlynhanvien.Employee;
 import com.company.quanlysach.Book;
@@ -11,47 +15,62 @@ public class Main {
 //    private static Object Teacher;
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         // write your code here
 
 
-        ListProduct product = new ListProduct();
-        Scanner sc = new Scanner(System.in);
 
-        int n;
-        do {
+//        ChuNhat cn = new ChuNhat(5,8);
+//        Vuong v = new Vuong(5,5);
+        SinhVienBiz sv1 = new SinhVienBiz("hihi","con ga",5,8);
+        SinhVienIT sv2 = new SinhVienIT("hihi2","conga2",10,9,8);
+        sv1.xuat();
+        sv1.getHocLuc();
 
-            System.out.println("\n-----------------Menu-----------------");
-            System.out.println("1. hien danh sach san pham ");
-            System.out.println("2. tim san pham theo ten  ");
-            System.out.println("3. tim san pham theo id");
-            System.out.println("4. tim san pham co so luong <5 ");
-            System.out.println("5. tim san pham theo muc gia ");
-            System.out.println("6. ket thuc");
-            n = sc.nextInt();
-            switch (n) {
-                case 1 -> {
-                    product.create();
-                    product.show();
-
-                }
-
-                case 2 -> product.searchName();
-                case 3 -> product.searchId();
-                case 4 -> product.searchAmount();
-                case 5 -> {
-                   product.searchPrice();
-                }
-                case 6 -> {
-                    System.exit(0);
-                }
-
-
-                default -> System.out.println("ban nhap sai vui long chon lai");
-            }
-        } while (n != 0);
+        System.out.println("___________");
+        sv2.xuat();
+        sv2.getHocLuc();
 
     }
 }
+//        ListProduct product = new ListProduct();
+//        Scanner sc = new Scanner(System.in);
+//
+//        int n;
+//        do {
+//
+//            System.out.println("\n-----------------Menu-----------------");
+//            System.out.println("1. hien danh sach san pham ");
+//            System.out.println("2. tim san pham theo ten  ");
+//            System.out.println("3. tim san pham theo id");
+//            System.out.println("4. tim san pham co so luong <5 ");
+//            System.out.println("5. tim san pham theo muc gia ");
+//            System.out.println("6. ket thuc");
+//            n = sc.nextInt();
+//            switch (n) {
+//                case 1 -> {
+//                    product.create();
+//                    product.show();
+//
+//                }
+//
+//                case 2 -> product.searchName();
+//                case 3 -> product.searchId();
+//                case 4 -> product.searchAmount();
+//                case 5 -> {
+//                   product.searchPrice();
+//                }
+//                case 6 -> {
+//                    System.exit(0);
+//                }
+//
+//
+//                default -> System.out.println("ban nhap sai vui long chon lai");
+//            }
+//        } while (n != 0);
+//
+//    }
+//}
 
 
 

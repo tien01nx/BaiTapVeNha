@@ -133,22 +133,35 @@ public class Book {
         });
     }
 
+    public void hoanDoi(int a, int b){
+        int temp = a;
+        a = b;
+        b = temp;
+    }
     // sap xep theo so trang tang dan
     public void sortYear(){
-        Collections.sort(list, new Comparator<Book>() {
-            @Override
-            public int compare(Book o1, Book o2) {
-                if (o1.getYear() > o2.getYear()) {
-                    return 1;
-                } else {
-                    if (o1.getYear() == o2.getYear()) {
-                        return 0;
-                    } else {
-                        return -1;
-                    }
-                }
+
+        for(int i =0;i<list.size();i++){
+            for(int j=i+1;j<list.size();j++){
+                if(list.get(i).getYear() >list.get(j).getYear())
+                    hoanDoi(list.get(i).getYear(),list.get(j).getYear());
             }
-        });
+        }
+//        Collections.sort(list, new Comparator<Book>() {
+//            @Override
+//            public int compare(Book o1, Book o2) {
+//                if (o1.getYear() > o2.getYear()) {
+//                    return 1;
+//                } else {
+//                    if (o1.getYear() == o2.getYear()) {
+//                        return 0;
+//                    } else {
+//                        return -1;
+//                    }
+//                }
+//            }
+//        });
+
     }
 
 
