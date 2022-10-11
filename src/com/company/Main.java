@@ -2,6 +2,8 @@ package com.company;
 import com.company.quanlynhanvien.DanhSachEmpoyee;
 import com.company.quanlynhanvien.Employee;
 import com.company.quanlysach.Book;
+import com.company.quanlysanpham.ListProduct;
+
 import java.util.*;
 
 public class Main {
@@ -12,45 +14,101 @@ public class Main {
         // write your code here
 
 
-        DanhSachEmpoyee e = new DanhSachEmpoyee();
-
+        ListProduct product = new ListProduct();
         Scanner sc = new Scanner(System.in);
 
         int n;
         do {
 
             System.out.println("\n-----------------Menu-----------------");
-            System.out.println("1. tim nhan vien theo id chinh xac ");
-            System.out.println("2. tim nhan vien theo ten  ");
-            System.out.println("3. dem so nhan vien nam, nu");
-            System.out.println("4. liet ke nhan vien tren 30 tuoi ");
-            System.out.println("5. nhap tu ban phim thang xem nhan vien sinh nhat thang do ");
-            System.out.println("6. hien ra top 3 nguoi co muc luong cao nhat");
-            System.out.println("7. ket thuc");
+            System.out.println("1. hien danh sach san pham ");
+            System.out.println("2. tim san pham theo ten  ");
+            System.out.println("3. tim san pham theo id");
+            System.out.println("4. tim san pham co so luong <5 ");
+            System.out.println("5. tim san pham theo muc gia ");
+            System.out.println("6. ket thuc");
             n = sc.nextInt();
             switch (n) {
                 case 1 -> {
-                    e.create();
-                    e.showAll();
+                    product.create();
+                    product.show();
+
                 }
 
-                case 2 -> e.searchId();
-                case 3 -> e.countGender();
-                case 4 -> e.listAge();
+                case 2 -> product.searchName();
+                case 3 -> product.searchId();
+                case 4 -> product.searchAmount();
                 case 5 -> {
-                   e.searAge();
+                   product.searchPrice();
                 }
                 case 6 -> {
-                   e.showTop3();
+                    System.exit(0);
                 }
 
-                case 7 -> System.exit(0);
+
                 default -> System.out.println("ban nhap sai vui long chon lai");
             }
         } while (n != 0);
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        DanhSachEmpoyee e = new DanhSachEmpoyee();
+//
+//        Scanner sc = new Scanner(System.in);
+//
+//        int n;
+//        do {
+//
+//            System.out.println("\n-----------------Menu-----------------");
+//            System.out.println("1. tim nhan vien theo id chinh xac ");
+//            System.out.println("2. tim nhan vien theo ten  ");
+//            System.out.println("3. dem so nhan vien nam, nu");
+//            System.out.println("4. liet ke nhan vien tren 30 tuoi ");
+//            System.out.println("5. nhap tu ban phim thang xem nhan vien sinh nhat thang do ");
+//            System.out.println("6. hien ra top 3 nguoi co muc luong cao nhat");
+//            System.out.println("7. ket thuc");
+//            n = sc.nextInt();
+//            switch (n) {
+//                case 1 -> {
+//                    e.create();
+//                    e.showAll();
+//                }
+//
+//                case 2 -> e.searchId();
+//                case 3 -> e.countGender();
+//                case 4 -> e.listAge();
+//                case 5 -> {
+//                   e.searAge();
+//                }
+//                case 6 -> {
+//                   e.showTop3();
+//                }
+//
+//                case 7 -> System.exit(0);
+//                default -> System.out.println("ban nhap sai vui long chon lai");
+//            }
+//        } while (n != 0);
+//
+//    }
+//}
 
 
 
