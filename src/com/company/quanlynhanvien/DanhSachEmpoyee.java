@@ -68,7 +68,7 @@ public class DanhSachEmpoyee {
     public void countGender() {
         int a = 0, b = 0;
         for (Employee e : list) {
-            if (e.getGender().toString().equals("NAM"))
+            if (e.getGender().toString().contains("NAM"))
                 a++;
             else
                 b++;
