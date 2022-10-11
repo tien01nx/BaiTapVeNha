@@ -13,6 +13,9 @@ public class DanhSachEmpoyee {
     String strDate3 = "20-08-2013";
     String strDate4 = "20-08-2017";
     String strDate5 = "10-08-1976";
+    //    In ra top 3 người có lương tháng cao nhất
+//
+    ArrayList<Employee> listTop3 = new ArrayList<>();
 
     public void create() {
         list.add(new Employee("NV01", "nguyen van a", LocalDate.parse(strDate, dtf), Gender.NAM, 700000));
@@ -22,12 +25,12 @@ public class DanhSachEmpoyee {
         list.add(new Employee("NV05", "nguyen van e", LocalDate.parse(strDate5, dtf), Gender.NAM, 200000));
 
     }
+//        tim kiem theo id tuyet doi tim chinh xac VD NV01
 
     public void showAll() {
         for (Employee e : list)
             System.out.println(e.toString());
     }
-//        tim kiem theo id tuyet doi tim chinh xac VD NV01
 
     public void searchId() {
         Scanner sc = new Scanner(System.in);
@@ -52,7 +55,7 @@ public class DanhSachEmpoyee {
         int dem = 0;
         String name = sc.nextLine();
         for (Employee e : list)
-            if (e.getId().equalsIgnoreCase(name)) {
+            if (e.getName().contains(name)) {
                 System.out.println(e.toString());
                 dem++;
             }
@@ -81,12 +84,14 @@ public class DanhSachEmpoyee {
         LocalDate date = LocalDate.now();
         int year = date.getYear();
         int dem = 0;
-        for (Employee e : list)
+        for (Employee e : list){
             if (year - e.getBirthday().getYear() > 30) {
                 System.out.println(e.toString());
                 dem++;
-            } else
-                System.out.println("khong co nhan vien nao >30");
+            }
+        }
+        if (dem == 0)
+            System.out.println("khong co nhan vien nao >30");
 
     }
 
@@ -96,19 +101,18 @@ public class DanhSachEmpoyee {
         System.out.println("nhap thang de kiem tra trong thang co sinh nhat nhien vien: ");
         int month = sc.nextInt();
         int dem = 0;
-        for (Employee e : list)
+        for (Employee e : list) {
             if (e.getBirthday().getMonthValue() == month) {
                 System.out.println(e.toString());
                 dem++;
-            } else
-                System.out.println("khong co sinh nhat nhan vien nao");
+            }
+        }
+        if (dem == 0)
+            System.out.println("khong co sinh nhat nhan vien nao");
 
     }
-//    In ra top 3 người có lương tháng cao nhất
-//
-ArrayList<Employee> listTop3 = new ArrayList<>();
 
-    public void showTop3(){
+    public void showTop3() {
         // tao danh sach list moi khi tim max remo ko bi mat du lieu danh sach list cu
         listTop3.addAll(list);
 
@@ -122,12 +126,12 @@ ArrayList<Employee> listTop3 = new ArrayList<>();
 //            list.remove(index);
 //        }
 
-        for(int i=0 ; i<3;i++){
+        for (int i = 0; i < 3; i++) {
 
-        Employee employee = listTop3.get(0);
-            for(Employee e :listTop3){
-                if(employee.getSalary()<e.getSalary())
-                    employee=e;
+            Employee employee = listTop3.get(0);
+            for (Employee e : listTop3) {
+                if (employee.getSalary() < e.getSalary())
+                    employee = e;
             }
             System.out.println(employee);
             listTop3.remove(employee);

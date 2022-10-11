@@ -52,41 +52,55 @@ public class ListProduct {
                 product = p;
                 dem++;
             }
-
         }
-        System.out.println("moi ban lua chon 1: xoa san pham 2. cap nhat so luong 3. ket thuc");
-        int n = sc.nextInt();
-        switch (n) {
-            case 1 -> {
-                list.remove(vitri);
-                System.out.println("Xoa thanh cong");
-                System.out.println("danh sach sau khi cap nhat la");
-                show();
-            }
-            case 2 -> {
-                System.out.println("nhap so luong muon cap nhat: ");
-                double sl = sc.nextDouble();
-                for (Product p : list) {
-                    if (p == product)
-                        p.setAmount(sl);
+        if (dem == 0) {
+            System.out.println("khong co id trong danh sach");
+        } else {
+            System.out.println("moi ban lua chon 1: xoa san pham 2. cap nhat so luong 3. ket thuc");
+            int n = sc.nextInt();
+            switch (n) {
+                case 1 -> {
+                    list.remove(vitri);
+                    System.out.println("Xoa thanh cong");
+                    System.out.println("danh sach sau khi cap nhat la");
+                    show();
                 }
-                System.out.println("danh sach sau khi cap nhat la");
-                show();
+                case 2 -> {
+                    System.out.println("nhap so luong muon cap nhat: ");
+                    double sl = sc.nextDouble();
+                    for (Product p : list) {
+                        if (p == product)
+                            p.setAmount(sl);
+                    }
+                    System.out.println("danh sach sau khi cap nhat la");
+                    show();
+                }
+                default -> System.out.println("ban chon sai vui long chon lai: ");
             }
-            default -> System.out.println("ban chon sai vui long chon lai: ");
         }
+
     }
 
     //4 - Tìm các sản phẩn có số lượng dưới 5
-    public  void searchAmount(){
+    public void searchAmount() {
         System.out.println("tim san pham co so luong duoi 5:");
-        for(Product p :list)
-            if(p.getAmount()<5)
+        int dem = 0;
+        for (Product p : list) {
+            if (p.getAmount() < 5) {
                 System.out.println(p.toString());
+                dem++;
+            }
+
+        }
+        if (dem == 0) {
+            System.out.println("khong co san pham nao co so luong <5");
+        }
+
     }
-    public  void searchPrice(){
+
+    public void searchPrice() {
         System.out.println("tim san pham theo muc gia 1. duoi 50.000 2. tu 50.000 den 100.000 3. 100.000 tro len ");
-        int n= sc.nextInt();
+        int n = sc.nextInt();
         switch (n) {
             case 1 -> {
                 for (Product p : list)
