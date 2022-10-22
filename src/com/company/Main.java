@@ -1,38 +1,87 @@
 package com.company;
-import com.company.dahinh.ChuNhat;
-import com.company.dahinh.Vuong;
-import com.company.diem.SinhVienBiz;
-import com.company.diem.SinhVienIT;
-import com.company.quanlynhanvien.DanhSachEmpoyee;
-import com.company.quanlynhanvien.Employee;
-import com.company.quanlysach.Book;
-import com.company.quanlysanpham.ListProduct;
+import com.company.quanlyhocsinh.model.School;
+import com.company.quanlyhocsinh.model.SchoolModel;
+import com.company.quanlytrandau.Model.Team;
+import com.company.quanlytrandau.Model.Tuong;
+import com.company.quanlytrandau.Model.TuongModel;
+import com.company.techmaster.model.*;
 
 import java.util.*;
 
 public class Main {
 
-//    private static Object Teacher;
+
+//     static final   Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // write your code here
+        SchoolModel model = new SchoolModel();
+        model.inputSchool(sc);
+        model.showAllSchool();
+        model.searchClass();
+        model.searchStudentsBirthdayAddress();
+        model.searchClass();
 
 
 
-//        ChuNhat cn = new ChuNhat(5,8);
-//        Vuong v = new Vuong(5,5);
-        SinhVienBiz sv1 = new SinhVienBiz("hihi","con ga",5,8);
-        SinhVienIT sv2 = new SinhVienIT("hihi2","conga2",10,9,8);
-        sv1.xuat();
-        sv1.getHocLuc();
 
-        System.out.println("___________");
-        sv2.xuat();
-        sv2.getHocLuc();
+//        TechMasterModel model = new TechMasterModel();
+//        model.input(sc);
+//        model.show();
+//        model.addHocVien(sc);
+//        model.deleteHocVien(sc);
+        
+//        TechMaster techMaster = model.input(sc);
+//
+//        HocVienModel model1 = new HocVienModel();
+//        model.input(sc);
+//        System.out.println(techMaster);
+//        System.out.println("them hoc vien vao lop hien tai");
+//        HocVien hocVien = model1.inputHocVien(sc);
+//
+//        techMaster.getLopHoc().getList().add(hocVien);
+//        System.out.println(techMaster);
+//
+//
+
+
+
+
+
+
+
+
+//        ArrayList<Tuong> list = new ArrayList<>();
+//        ArrayList<Tuong> list2 = new ArrayList<>();
+//
+//        TuongModel model = new TuongModel();
+//        for(int i=0;i<5;i++){
+//            Tuong tuong =model.createTuong(sc);
+//            list.add(tuong);
+//        }
+//        for(int i=0;i<5;i++){
+//            Tuong tuong =model.createTuong(sc);
+//            list2.add(tuong);
+//        }
+//        Team team1 = new Team();
+////        team1.se
 
     }
 }
+
+//        ChuNhat cn = new ChuNhat(5,8);
+//        Vuong v = new Vuong(5,5);
+//        SinhVienBiz sv1 = new SinhVienBiz("hihi","con ga",5,8);
+//        SinhVienIT sv2 = new SinhVienIT("hihi2","conga2",10,9,8);
+//        sv1.xuat();
+//        sv1.getHocLuc();
+//
+//        System.out.println("___________");
+//        sv2.xuat();
+//        sv2.getHocLuc();
+//
+//    }
+//}
 //        ListProduct product = new ListProduct();
 //        Scanner sc = new Scanner(System.in);
 //
