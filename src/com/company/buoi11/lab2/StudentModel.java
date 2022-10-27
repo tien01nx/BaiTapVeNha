@@ -6,33 +6,38 @@ import java.util.Scanner;
 public class StudentModel {
     Scanner sc = new Scanner(System.in);
     ArrayList<Student> students = new ArrayList<>();
-    Student student = new Student();
-    private double scoreMath, scorePhysic, scoreChemistry;
+
+    //    Student student = new Student();
 // nhap thong tin student
     public void inputStudent() {
         System.out.println("nhap so luong sinh vien: ");
         int n = sc.nextInt();
         for (int i = 0; i < n; i++) {
+
             sc.nextLine();
             System.out.println("name: ");
             String name = sc.nextLine();
             System.out.println("score Math");
-            scoreMath = sc.nextDouble();
+            double scoreMath = sc.nextDouble();
             System.out.println("score Physic: ");
-            scorePhysic = sc.nextDouble();
+            double scorePhysic = sc.nextDouble();
             System.out.println("score Chemistry: ");
-            scoreChemistry = sc.nextDouble();
-            double avg = scoreAverage();
-            String classifi = Classification();
-            students.add(new Student(name, scoreMath, scorePhysic, scoreChemistry, avg, classifi));
+            double scoreChemistry = sc.nextDouble();
+            students.add(new Student(name, scoreMath, scorePhysic, scoreChemistry));
         }
-        System.out.println(students.toString());
+
     }
-//tinh diem trung binh
+
+    //tinh diem trung binh
     public double scoreAverage() {
-        return (scoreMath + scoreChemistry + scorePhysic) / 3;
+        double avg = 0.0d;
+        for (int i = 0; i < students.size(); i++) {
+             avg = (students.get(i).getScorePhysic() + students.get(i).getScoreMath() + students.get(i).getScoreChemistry());
+        }
+        return avg / 3;
     }
-// tinh tien xep loai
+
+    // tinh tien xep loai
     public String Classification() {
         if (scoreAverage() >= 8)
             return "xep loai A";
@@ -41,12 +46,13 @@ public class StudentModel {
         else
             return "xep loai C";
     }
-// hien thong tin sinh vien
+
+    // hien thong tin sinh vien
     public void showStudent() {
         for (int i = 0; i < students.size(); i++) {
             System.out.println("name: " + students.get(i).getName());
-            System.out.println("diem trung binh: " + students.get(i).getAvg());
-            System.out.println("xep loai: " + students.get(i).getClassiFication());
+            System.out.println("diem trung binh: " + scoreAverage());
+            System.out.println("xep loai: " + Classification());
         }
     }
     // tinh phan tram tunng loai
@@ -56,21 +62,18 @@ public class StudentModel {
         int loaiB = 0;
         int loaiC = 0;
         int i;
-        for ( i = 0; i < students.size(); i++) {
-            if (students.get(i).getClassiFication().equals("xep loai A")) {
+        for (i = 0; i < students.size(); i++) {
+            if (Classification().equals("xep loai A")) {
                 loaiA++;
-            } else if (students.get(i).getClassiFication().equals("xep loai B")) {
+            } else if (Classification().equals("xep loai B")) {
                 loaiB++;
 
             } else loaiC++;
         }
         System.out.println(i);
-        System.out.println("% hoc sinh xep loai A la: "+(double)loaiA/i);
-        System.out.println("% hoc sinh xeo loai B la: "+(double)loaiB/i);
-        System.out.println("% hoc sinh xeo loai C la: "+(double)loaiC/i);
-
-
-
+        System.out.println("% hoc sinh xep loai A la: " + (double) loaiA / i);
+        System.out.println("% hoc sinh xeo loai B la: " + (double) loaiB / i);
+        System.out.println("% hoc sinh xeo loai C la: " + (double) loaiC / i);
 
 
     }

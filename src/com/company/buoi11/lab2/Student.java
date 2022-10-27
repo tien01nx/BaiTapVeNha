@@ -4,21 +4,20 @@ public class Student {
     private static int idTemp = 1;
     private  int id;
     private String name;
-    private  double scoreMath,scorePhysic,scoreChemistry,avg;
-    private String classiFication;
+    private  double scoreMath,scorePhysic,scoreChemistry;
+
 
     public Student() {
 
     }
 
 
-    public Student(String name, double scoreMath, double scorePhysic, double scoreChemistry,double avg,String classiFication) {
+    public Student(String name, double scoreMath, double scorePhysic, double scoreChemistry) {
         this.name = name;
         this.scoreMath = scoreMath;
         this.scorePhysic = scorePhysic;
         this.scoreChemistry = scoreChemistry;
-        this.avg =avg;
-        this.classiFication =classiFication;
+
         this.id =idTemp++;
     }
 
@@ -29,9 +28,23 @@ public class Student {
                 ", scoreMath=" + scoreMath +
                 ", scorePhysic=" + scorePhysic +
                 ", scoreChemistry=" + scoreChemistry +
-                ", avg=" + avg +
-                ", classiFication='" + classiFication + '\'' +
                 '}';
+    }
+
+    public static int getIdTemp() {
+        return idTemp;
+    }
+
+    public static void setIdTemp(int idTemp) {
+        Student.idTemp = idTemp;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -64,21 +77,5 @@ public class Student {
 
     public void setScoreChemistry(double scoreChemistry) {
         this.scoreChemistry = scoreChemistry;
-    }
-
-    public double getAvg() {
-        return avg;
-    }
-
-    public void setAvg(double avg) {
-        this.avg = avg;
-    }
-
-    public String getClassiFication() {
-        return classiFication;
-    }
-
-    public void setClassiFication(String classiFication) {
-        this.classiFication = classiFication;
     }
 }

@@ -3,6 +3,7 @@ package com.company.diem;
     private String hoten,cn;
      public abstract double getDiem();
 
+
      public SinhVienTechMaster(String hoten, String cn) {
          this.hoten = hoten;
          this.cn = cn;

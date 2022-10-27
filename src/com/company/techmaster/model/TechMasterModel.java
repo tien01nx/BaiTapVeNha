@@ -22,6 +22,7 @@ public class TechMasterModel {
 
     }
 
+
     public void show() {
 
         System.out.println("quan ly: " + techMaster.getQuanLy());
